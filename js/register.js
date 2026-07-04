@@ -98,3 +98,60 @@ button.textContent.trim();
 });
 
 }
+/* =========================
+   SAVE
+========================= */
+
+const battleForm = document.getElementById("battleForm");
+
+if(battleForm){
+
+battleForm.addEventListener("submit",event=>{
+
+event.preventDefault();
+
+const battle={
+
+id:Date.now(),
+
+date:document.getElementById("battleDate").value,
+
+battleType:document.getElementById("battleType").value,
+
+rule:document.getElementById("rule").value,
+
+stage:document.getElementById("stage").value,
+
+weapon:document.getElementById("weapon").value,
+
+rank:document.getElementById("rank").value,
+
+result:selectedResult,
+
+kill:+document.getElementById("kill").value,
+
+assist:+document.getElementById("assist").value,
+
+death:+document.getElementById("death").value,
+
+special:+document.getElementById("special").value,
+
+paint:+document.getElementById("paint").value,
+
+memo:document.getElementById("memo").value,
+
+favorite:document.getElementById("favorite").checked
+
+};
+
+createBattle(battle);
+
+showToast("試合を登録しました！");
+
+battleForm.reset();
+
+initDate();
+
+});
+
+}
