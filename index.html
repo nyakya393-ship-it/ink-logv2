@@ -138,11 +138,288 @@
 
         <!-- 試合登録 -->
 
-        <section class="page" id="registerPage">
+    <section class="page active" id="registerPage">
 
-            <h2>試合登録</h2>
+<h2>試合登録</h2>
 
-        </section>
+<form id="battleForm">
+
+<!-- 基本情報 -->
+
+<div class="form-section">
+
+<h3>基本情報</h3>
+
+<div class="form-grid">
+
+<div>
+
+<label>日時</label>
+
+<input
+type="datetime-local"
+id="battleDate">
+
+</div>
+
+<div>
+
+<label>バトル種類</label>
+
+<select id="battleType">
+
+<option>レギュラーマッチ</option>
+
+<option>バンカラマッチ（チャレンジ）</option>
+
+<option>バンカラマッチ（オープン）</option>
+
+<option>Xマッチ</option>
+
+<option>イベントマッチ</option>
+
+<option>フェスマッチ</option>
+
+<option>トリカラバトル</option>
+
+<option>プライベートマッチ</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>ルール</label>
+
+<select id="rule">
+
+<option>ナワバリバトル</option>
+
+<option>ガチエリア</option>
+
+<option>ガチヤグラ</option>
+
+<option>ガチホコ</option>
+
+<option>ガチアサリ</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>ステージ</label>
+
+<select id="stage">
+
+<option>選択してください</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>ブキ</label>
+
+<select id="weapon">
+
+<option>選択してください</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>ウデマエ</label>
+
+<select id="rank">
+
+<option>C-</option>
+<option>C</option>
+<option>C+</option>
+
+<option>B-</option>
+<option>B</option>
+<option>B+</option>
+
+<option>A-</option>
+<option>A</option>
+<option>A+</option>
+
+<option>S</option>
+<option>S+</option>
+
+<option>X</option>
+
+</select>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- 勝敗 -->
+
+<div class="form-section">
+
+<h3>試合結果</h3>
+
+<div class="result-group">
+
+<button
+type="button"
+class="result-btn win">
+
+勝利
+
+</button>
+
+<button
+type="button"
+class="result-btn lose">
+
+敗北
+
+</button>
+
+<button
+type="button"
+class="result-btn dc">
+
+通信切断
+
+</button>
+
+<button
+type="button"
+class="result-btn invalid">
+
+無効試合
+
+</button>
+
+</div>
+
+</div>
+
+<!-- 戦績 -->
+
+<div class="form-section">
+
+<h3>戦績</h3>
+
+<div class="form-grid">
+
+<div>
+
+<label>キル</label>
+
+<input
+type="number"
+id="kill"
+min="0">
+
+</div>
+
+<div>
+
+<label>アシストキル</label>
+
+<input
+type="number"
+id="assist"
+min="0">
+
+</div>
+
+<div>
+
+<label>デス</label>
+
+<input
+type="number"
+id="death"
+min="0">
+
+</div>
+
+<div>
+
+<label>スペシャル発動回数</label>
+
+<input
+type="number"
+id="special"
+min="0">
+
+</div>
+
+<div>
+
+<label>塗りポイント</label>
+
+<input
+type="number"
+id="paint"
+min="0">
+
+</div>
+
+</div>
+
+</div>
+
+<!-- メモ -->
+
+<div class="form-section">
+
+<h3>メモ</h3>
+
+<textarea
+id="memo"
+rows="5"
+placeholder="自由に記録できます"></textarea>
+
+</div>
+
+<!-- お気に入り -->
+
+<div class="form-section">
+
+<label>
+
+<input
+type="checkbox"
+id="favorite">
+
+お気に入り登録
+
+</label>
+
+</div>
+
+<div
+style="display:flex;
+justify-content:flex-end;">
+
+<button
+type="submit"
+class="primary">
+
+試合を登録
+
+</button>
+
+</div>
+
+</form>
+
+</section>
 
         <!-- 戦績 -->
 
