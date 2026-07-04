@@ -102,56 +102,58 @@ button.textContent.trim();
    SAVE
 ========================= */
 
-const battleForm = document.getElementById("battleForm");
+function initSave(){
 
-if(battleForm){
+    const battleForm = document.getElementById("battleForm");
 
-battleForm.addEventListener("submit",event=>{
+    if(!battleForm) return;
 
-event.preventDefault();
+    battleForm.addEventListener("submit",(event)=>{
 
-const battle={
+        event.preventDefault();
 
-id:Date.now(),
+        const battle={
 
-date:document.getElementById("battleDate").value,
+            id:Date.now(),
 
-battleType:document.getElementById("battleType").value,
+            date:document.getElementById("battleDate").value,
 
-rule:document.getElementById("rule").value,
+            battleType:document.getElementById("battleType").value,
 
-stage:document.getElementById("stage").value,
+            rule:document.getElementById("rule").value,
 
-weapon:document.getElementById("weapon").value,
+            stage:document.getElementById("stage").value,
 
-rank:document.getElementById("rank").value,
+            weapon:document.getElementById("weapon").value,
 
-result:selectedResult,
+            rank:document.getElementById("rank").value,
 
-kill:+document.getElementById("kill").value,
+            result:selectedResult,
 
-assist:+document.getElementById("assist").value,
+            kill:+document.getElementById("kill").value,
 
-death:+document.getElementById("death").value,
+            assist:+document.getElementById("assist").value,
 
-special:+document.getElementById("special").value,
+            death:+document.getElementById("death").value,
 
-paint:+document.getElementById("paint").value,
+            special:+document.getElementById("special").value,
 
-memo:document.getElementById("memo").value,
+            paint:+document.getElementById("paint").value,
 
-favorite:document.getElementById("favorite").checked
+            memo:document.getElementById("memo").value,
 
-};
+            favorite:document.getElementById("favorite").checked
 
-createBattle(battle);
+        };
 
-showToast("試合を登録しました！");
+        createBattle(battle);
 
-battleForm.reset();
+        showToast("試合を登録しました！");
 
-initDate();
+        battleForm.reset();
 
-});
+        initDate();
+
+    });
 
 }
