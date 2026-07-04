@@ -161,3 +161,35 @@ initDate();
     });
 
 }
+document.getElementById("battleForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const battle = {
+        date: document.getElementById("battleDate").value,
+        type: document.getElementById("battleType").value,
+        rule: document.getElementById("rule").value,
+        stage: document.getElementById("stage").value,
+        weapon: document.getElementById("weapon").value,
+        rank: document.getElementById("rank").value,
+
+        // ★Part5-3追加分
+        result: document.getElementById("result").value,
+        kill: Number(document.getElementById("kill").value),
+        assist: Number(document.getElementById("assist").value),
+        death: Number(document.getElementById("death").value),
+        special: Number(document.getElementById("special").value),
+        paint: Number(document.getElementById("paint").value)
+    };
+
+    let battles = JSON.parse(localStorage.getItem("battles")) || [];
+
+    battles.push(battle);
+
+    localStorage.setItem("battles", JSON.stringify(battles));
+
+    alert("試合を保存しました");
+
+    this.reset();
+
+});
