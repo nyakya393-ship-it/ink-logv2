@@ -18,6 +18,8 @@ function initRegister(){
 
     initDate();
 
+    initSave();
+
 }
 function initDate(){
 
