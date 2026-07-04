@@ -23,3 +23,12 @@ function saveBattles(battles){
     );
 
 }
+function createBattle(data){
+
+    const battles = loadBattles();
+
+    battles.unshift(data);
+
+    saveBattles(battles);
+
+}
