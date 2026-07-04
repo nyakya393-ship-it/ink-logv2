@@ -271,35 +271,27 @@ id="battleDate">
 
 <div class="result-group">
 
-<button
-type="button"
-class="result-btn win">
+<button class="result-btn win active-result" type="button">
 
-勝利
+🏆 WIN
 
 </button>
 
-<button
-type="button"
-class="result-btn lose">
+<button class="result-btn lose" type="button">
 
-敗北
+💀 LOSE
 
 </button>
 
-<button
-type="button"
-class="result-btn dc">
+<button class="result-btn dc" type="button">
 
-通信切断
+📡 通信切断
 
 </button>
 
-<button
-type="button"
-class="result-btn invalid">
+<button class="result-btn invalid" type="button">
 
-無効試合
+🚫 無効試合
 
 </button>
 
@@ -319,10 +311,27 @@ class="result-btn invalid">
 
 <label>キル</label>
 
+<div class="counter">
+
+<button type="button" class="minus">
+
+−
+
+</button>
+
 <input
 type="number"
 id="kill"
+value="0"
 min="0">
+
+<button type="button" class="plus">
+
+＋
+
+</button>
+
+</div>
 
 </div>
 
@@ -330,21 +339,54 @@ min="0">
 
 <label>アシストキル</label>
 
+<div class="counter">
+
+<button type="button" class="minus">
+
+−
+
+</button>
+
 <input
 type="number"
 id="assist"
+value="0"
 min="0">
 
+<button type="button" class="plus">
+
+＋
+
+</button>
+
+</div>
 </div>
 
 <div>
 
 <label>デス</label>
 
+<div class="counter">
+
+<button type="button" class="minus">
+
+−
+
+</button>
+
 <input
 type="number"
 id="death"
+value="0"
 min="0">
+
+<button type="button" class="plus">
+
+＋
+
+</button>
+
+</div>
 
 </div>
 
@@ -352,10 +394,27 @@ min="0">
 
 <label>スペシャル発動回数</label>
 
+<div class="counter">
+
+<button type="button" class="minus">
+
+−
+
+</button>
+
 <input
 type="number"
 id="special"
+value="0"
 min="0">
+
+<button type="button" class="plus">
+
+＋
+
+</button>
+
+</div>
 
 </div>
 
@@ -364,9 +423,10 @@ min="0">
 <label>塗りポイント</label>
 
 <input
-type="number"
-id="paint"
-min="0">
+    type="number"
+    id="paint"
+    inputmode="numeric"
+    placeholder="1234">
 
 </div>
 
@@ -403,9 +463,25 @@ id="favorite">
 
 </div>
 
-<div
-style="display:flex;
-justify-content:flex-end;">
+<div class="submit-area">
+
+<button
+type="reset"
+class="secondary">
+
+リセット
+
+</button>
+
+<button
+type="submit"
+class="primary">
+
+記録する！
+
+</button>
+
+</div>
 
 <button
 type="submit"
