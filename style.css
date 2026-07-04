@@ -1499,3 +1499,26 @@ font-size:20px;
 font-weight:bold;
 
 }
+.battle-actions{
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.battle-actions button{
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.battle-actions button:first-child{
+    background: #3b82f6;
+    color: white;
+}
+
+.battle-actions button:last-child{
+    background: #ef4444;
+    color: white;
+}
