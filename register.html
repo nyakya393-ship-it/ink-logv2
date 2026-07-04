@@ -99,6 +99,61 @@ required>
 
 </div>
 
+<!-- ======================
+試合結果エリア（Part5-3）
+====================== -->
+
+<div class="form-section">
+
+<h3>試合結果</h3>
+
+<div class="form-grid">
+
+<!-- 勝敗 -->
+<div class="form-item">
+<label for="result">結果</label>
+<select id="result" required>
+    <option value="win">🏆 勝利</option>
+    <option value="lose">💀 敗北</option>
+    <option value="disconnect">📡 通信切断</option>
+    <option value="invalid">🚫 無効試合</option>
+</select>
+</div>
+
+<!-- キル -->
+<div class="form-item">
+<label for="kill">キル</label>
+<input type="number" id="kill" min="0" value="0">
+</div>
+
+<!-- アシスト -->
+<div class="form-item">
+<label for="assist">アシスト</label>
+<input type="number" id="assist" min="0" value="0">
+</div>
+
+<!-- デス -->
+<div class="form-item">
+<label for="death">デス</label>
+<input type="number" id="death" min="0" value="0">
+</div>
+
+<!-- スペシャル -->
+<div class="form-item">
+<label for="special">スペシャル</label>
+<input type="number" id="special" min="0" value="0">
+</div>
+
+<!-- 塗りポイント -->
+<div class="form-item">
+<label for="paint">塗りポイント</label>
+<input type="number" id="paint" min="0" value="0">
+</div>
+
+</div>
+
+</div>
+
 <div class="form-item">
 
 <label for="battleType">
