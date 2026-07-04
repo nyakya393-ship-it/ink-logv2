@@ -2,16 +2,8 @@
    APP
 ========================= */
 
-document.addEventListener(
+document.addEventListener("DOMContentLoaded",()=>{
 
-"DOMContentLoaded",
-
-()=>{
-
-console.log(
-
-"InkLog 起動"
-
-);
+    renderBattleList();
 
 });
