@@ -1,1 +1,538 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>InkLog</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ===== サイドバー ===== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h1>InkLog</h1>
+
+            <span>Battle Record</span>
+
+        </div>
+
+        <nav>
+
+            <button class="nav-btn active">
+
+                🏠
+                <span>ホーム</span>
+
+            </button>
+
+            <button class="nav-btn">
+
+                ➕
+                <span>試合登録</span>
+
+            </button>
+
+            <button class="nav-btn">
+
+                📖
+                <span>戦績</span>
+
+            </button>
+
+            <button class="nav-btn">
+
+                📊
+                <span>分析</span>
+
+            </button>
+
+            <button class="nav-btn">
+
+                🏅
+                <span>バッジ</span>
+
+            </button>
+
+            <button class="nav-btn">
+
+                ⚙️
+                <span>設定</span>
+
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <!-- ===== メイン ===== -->
+
+    <main class="main">
+
+        <!-- ヘッダー -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>ホーム</h2>
+
+                <p>Splatoon Battle Record</p>
+
+            </div>
+
+        </header>
+
+        <!-- ダッシュボード -->
+
+        <section class="dashboard">
+
+            <div class="card">
+
+                <h3>総試合数</h3>
+
+                <p id="totalBattle">0</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>勝率</h3>
+
+                <p id="winRate">0%</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>平均キル</h3>
+
+                <p id="avgKill">0.0</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>K/D</h3>
+
+                <p id="kd">0.00</p>
+
+            </div>
+
+        </section>
+
+        <!-- 試合登録 -->
+
+    <section class="page active" id="registerPage">
+
+<h2>試合登録</h2>
+
+<form id="battleForm">
+
+<!-- 基本情報 -->
+
+<div class="form-section">
+
+<h3>基本情報</h3>
+
+<div class="form-grid">
+
+<div>
+
+<label>日時</label>
+
+<input
+type="datetime-local"
+id="battleDate">
+
+</div>
+
+<div>
+
+<label>バトル種類</label>
+
+<select id="battleType">
+
+<option>レギュラーマッチ</option>
+
+<option>バンカラマッチ（チャレンジ）</option>
+
+<option>バンカラマッチ（オープン）</option>
+
+<option>Xマッチ</option>
+
+<option>イベントマッチ</option>
+
+<option>フェスマッチ</option>
+
+<option>トリカラバトル</option>
+
+<option>プライベートマッチ</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>ルール</label>
+
+<select id="rule">
+
+<option>ナワバリバトル</option>
+
+<option>ガチエリア</option>
+
+<option>ガチヤグラ</option>
+
+<option>ガチホコ</option>
+
+<option>ガチアサリ</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>ステージ</label>
+
+<select id="stage">
+
+<option>選択してください</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>ブキ</label>
+
+<select id="weapon">
+
+<option>選択してください</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>ウデマエ</label>
+
+<select id="rank">
+
+<option>C-</option>
+<option>C</option>
+<option>C+</option>
+
+<option>B-</option>
+<option>B</option>
+<option>B+</option>
+
+<option>A-</option>
+<option>A</option>
+<option>A+</option>
+
+<option>S</option>
+<option>S+</option>
+
+<option>X</option>
+
+</select>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- 勝敗 -->
+
+<div class="form-section">
+
+<h3>試合結果</h3>
+
+<div class="result-group">
+
+<button class="result-btn win active-result" type="button">
+
+🏆 WIN
+
+</button>
+
+<button class="result-btn lose" type="button">
+
+💀 LOSE
+
+</button>
+
+<button class="result-btn dc" type="button">
+
+📡 通信切断
+
+</button>
+
+<button class="result-btn invalid" type="button">
+
+🚫 無効試合
+
+</button>
+
+</div>
+
+</div>
+
+<!-- 戦績 -->
+
+<div class="form-section">
+
+<h3>戦績</h3>
+
+<div class="form-grid">
+
+<div>
+
+<label>キル</label>
+
+<div class="counter">
+
+<button type="button" class="minus">
+
+−
+
+</button>
+
+<input
+type="number"
+id="kill"
+value="0"
+min="0">
+
+<button type="button" class="plus">
+
+＋
+
+</button>
+
+</div>
+
+</div>
+
+<div>
+
+<label>アシストキル</label>
+
+<div class="counter">
+
+<button type="button" class="minus">
+
+−
+
+</button>
+
+<input
+type="number"
+id="assist"
+value="0"
+min="0">
+
+<button type="button" class="plus">
+
+＋
+
+</button>
+
+</div>
+</div>
+
+<div>
+
+<label>デス</label>
+
+<div class="counter">
+
+<button type="button" class="minus">
+
+−
+
+</button>
+
+<input
+type="number"
+id="death"
+value="0"
+min="0">
+
+<button type="button" class="plus">
+
+＋
+
+</button>
+
+</div>
+
+</div>
+
+<div>
+
+<label>スペシャル発動回数</label>
+
+<div class="counter">
+
+<button type="button" class="minus">
+
+−
+
+</button>
+
+<input
+type="number"
+id="special"
+value="0"
+min="0">
+
+<button type="button" class="plus">
+
+＋
+
+</button>
+
+</div>
+
+</div>
+
+<div>
+
+<label>塗りポイント</label>
+
+<input
+    type="number"
+    id="paint"
+    inputmode="numeric"
+    placeholder="1234">
+
+</div>
+
+</div>
+
+</div>
+
+<!-- メモ -->
+
+<div class="form-section">
+
+<h3>メモ</h3>
+
+<textarea
+id="memo"
+rows="5"
+placeholder="自由に記録できます"></textarea>
+
+</div>
+
+<!-- お気に入り -->
+
+<div class="form-section">
+
+<label>
+
+<input
+type="checkbox"
+id="favorite">
+
+お気に入り登録
+
+</label>
+
+</div>
+
+<div class="submit-area">
+
+<button
+type="reset"
+class="secondary">
+
+リセット
+
+</button>
+
+<button
+type="submit"
+class="primary">
+
+記録する！
+
+</button>
+
+</div>
+
+</form>
+
+</section>
+
+        <!-- 戦績 -->
+
+        <section class="page" id="historyPage">
+
+<h2>戦績</h2>
+
+<div id="battleList"></div>
+
+</section>
+
+        <!-- 分析 -->
+
+        <section class="page" id="analysisPage">
+
+            <h2>分析</h2>
+
+        </section>
+
+        <!-- バッジ -->
+
+        <section class="page" id="badgePage">
+
+            <h2>バッジ</h2>
+
+        </section>
+
+        <!-- 設定 -->
+
+        <section class="page" id="settingPage">
+
+            <h2>設定</h2>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/register.js"></script>
+<script src="js/history.js"></script>
+<script src="js/analysis.js"></script>
+<script src="js/badges.js"></script>
+<script src="js/export.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
