@@ -1367,3 +1367,44 @@ box-shadow:
 transform:scale(1.03);
 
 }
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+
+position:fixed;
+
+left:50%;
+
+bottom:35px;
+
+transform:translateX(-50%);
+
+background:#222;
+
+color:#fff;
+
+padding:14px 22px;
+
+border-radius:14px;
+
+font-weight:700;
+
+opacity:0;
+
+transition:.3s;
+
+z-index:9999;
+
+border:2px solid var(--yellow);
+
+}
+
+.toast.show{
+
+opacity:1;
+
+transform:translate(-50%,-10px);
+
+}
