@@ -1245,3 +1245,125 @@ to{
 }
 
 }
+/* =========================
+   COUNTER
+========================= */
+
+.counter{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+.counter button{
+
+width:42px;
+
+height:42px;
+
+border:none;
+
+border-radius:50%;
+
+background:#ff2f7d;
+
+color:white;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.counter button:hover{
+
+transform:scale(1.08);
+
+}
+
+.counter input{
+
+flex:1;
+
+text-align:center;
+
+margin:0;
+
+font-size:22px;
+
+font-weight:900;
+
+}
+
+/* =========================
+   SUBMIT
+========================= */
+
+.submit-area{
+
+display:flex;
+
+justify-content:flex-end;
+
+gap:15px;
+
+margin-top:25px;
+
+}
+
+.secondary{
+
+background:#3b3b3b;
+
+color:white;
+
+border:none;
+
+padding:16px 32px;
+
+border-radius:16px;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+.primary{
+
+padding:16px 50px;
+
+font-size:18px;
+
+border-radius:16px;
+
+box-shadow:0 0 20px rgba(255,230,0,.35);
+
+}
+
+.primary:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* =========================
+   ACTIVE RESULT
+========================= */
+
+.active-result{
+
+box-shadow:
+0 0 20px rgba(255,230,0,.5);
+
+transform:scale(1.03);
+
+}
