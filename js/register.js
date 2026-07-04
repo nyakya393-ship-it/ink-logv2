@@ -150,11 +150,13 @@ function initSave(){
 
         createBattle(battle);
 
-        showToast("試合を登録しました！");
+renderBattleList();
 
-        battleForm.reset();
+showToast("試合を登録しました！");
 
-        initDate();
+battleForm.reset();
+
+initDate();
 
     });
 
