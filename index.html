@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>InkLog</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ===== サイドバー ===== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h1>InkLog</h1>
+
+            <span>Battle Record</span>
+
+        </div>
+
+        <nav>
+
+            <button class="nav-btn active">
+
+                🏠
+                <span>ホーム</span>
+
+            </button>
+
+            <button class="nav-btn">
+
+                ➕
+                <span>試合登録</span>
+
+            </button>
+
+            <button class="nav-btn">
+
+                📖
+                <span>戦績</span>
+
+            </button>
+
+            <button class="nav-btn">
+
+                📊
+                <span>分析</span>
+
+            </button>
+
+            <button class="nav-btn">
+
+                🏅
+                <span>バッジ</span>
+
+            </button>
+
+            <button class="nav-btn">
+
+                ⚙️
+                <span>設定</span>
+
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <!-- ===== メイン ===== -->
+
+    <main class="main">
+
+        <!-- ヘッダー -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>ホーム</h2>
+
+                <p>Splatoon Battle Record</p>
+
+            </div>
+
+        </header>
+
+        <!-- ダッシュボード -->
+
+        <section class="dashboard">
+
+            <div class="card">
+
+                <h3>総試合数</h3>
+
+                <p id="totalBattle">0</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>勝率</h3>
+
+                <p id="winRate">0%</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>平均キル</h3>
+
+                <p id="avgKill">0.0</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>K/D</h3>
+
+                <p id="kd">0.00</p>
+
+            </div>
+
+        </section>
+
+        <!-- 試合登録 -->
+
+        <section class="page" id="registerPage">
+
+            <h2>試合登録</h2>
+
+        </section>
+
+        <!-- 戦績 -->
+
+        <section class="page" id="historyPage">
+
+            <h2>戦績</h2>
+
+        </section>
+
+        <!-- 分析 -->
+
+        <section class="page" id="analysisPage">
+
+            <h2>分析</h2>
+
+        </section>
+
+        <!-- バッジ -->
+
+        <section class="page" id="badgePage">
+
+            <h2>バッジ</h2>
+
+        </section>
+
+        <!-- 設定 -->
+
+        <section class="page" id="settingPage">
+
+            <h2>設定</h2>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
